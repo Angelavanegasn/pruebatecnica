@@ -1,0 +1,99 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="airline">Aeroliena</label>
+        <input
+          type="text"
+          class="form-control"
+          id="airline"
+          required
+          [(ngModel)]="vuelo.airline"
+          name="airline"
+        />
+      </div>
+      <div class="form-group">
+        <label for="time">Time</label>
+        <input
+          type="text"
+          class="form-control"
+          id="time"
+          required
+          [(ngModel)]="vuelo.time"
+          name="time"
+        />
+      </div>
+      <div class="form-group">
+        <label for="fromvuelo">Desde</label>
+        <input
+          type="text"
+          class="form-control"
+          id="fromvuelo"
+          required
+          [(ngModel)]="vuelo.fromvuelo"
+          name="fromvuelo"
+        />
+      </div>
+      <div class="form-group">
+        <label for="remarks">Descripcion</label>
+        <input
+          type="text"
+          class="form-control"
+          id="remarks"
+          required
+          [(ngModel)]="vuelo.remarks"
+          name="remarks"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="tovuelo">A</label>
+        <input
+          class="form-control"
+          id="tovuelo"
+          required
+          [(ngModel)]="vuelo.tovuelo"
+          name="tovuelo"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="gate">Porton</label>
+        <input
+          class="form-control"
+          id="gate"
+          required
+          [(ngModel)]="vuelo.gate"
+          name="gate"
+        />
+      </div>
+      <div class="form-group">
+        <label for="typeVuelo">Tipo vuelo</label>
+        <input
+          class="form-control"
+          id="typeVuelo"
+          required
+          [(ngModel)]="vuelo.typeVuelo"
+          name="typeVuelo"
+        />
+      </div>
+      <div class="form-group">
+        <label for="flightNo">Numero vuelo</label>
+        <input
+          class="form-control"
+          id="flightNo"
+          required
+          [(ngModel)]="vuelo.flightNo"
+          name="flightNo"
+        />
+      </div>
+
+      <button (click)="saveTutorial()" class="btn btn-success">Guardar</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>El vuelos fue creado satisfactoriamente</h4>
+      <button class="btn btn-success" (click)="newTutorial()">Crear</button>
+    </div>
+  </div>
+</div>

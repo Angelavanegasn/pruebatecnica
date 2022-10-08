@@ -1,0 +1,125 @@
+<div>
+  <div *ngIf="currentTutorial.id" class="edit-form">
+    <h4>Vuelo</h4>
+    <form>
+      <div class="form-group">
+        <label for="airline">Aerolinea</label>
+        <input
+          type="text"
+          class="form-control"
+          id="airline"
+          [(ngModel)]="currentTutorial.airline"
+          name="airline"
+        />
+      </div>
+      <div class="form-group">
+        <label for="time">Hora </label>
+        <input
+          type="text"
+          class="form-control"
+          id="time"
+          [(ngModel)]="currentTutorial.time"
+          name="time"
+        />
+      </div>
+      <div class="form-group">
+        <label for="fromvuelo">Desde </label>
+        <input
+          type="text"
+          class="form-control"
+          id="fromvuelo"
+          [(ngModel)]="currentTutorial.fromvuelo"
+          name="fromvuelo"
+        />
+      </div>
+      <div class="form-group">
+        <label for="remarks">Descripcion </label>
+        <input
+          type="text"
+          class="form-control"
+          id="remarks"
+          [(ngModel)]="currentTutorial.remarks"
+          name="remarks"
+        />
+      </div>
+      <div class="form-group">
+        <label for="tovuelo">Hacia </label>
+        <input
+          type="text"
+          class="form-control"
+          id="tovuelo"
+          [(ngModel)]="currentTutorial.tovuelo"
+          name="tovuelo"
+        />
+      </div>
+      <div class="form-group">
+        <label for="gate">Porton </label>
+        <input
+          type="text"
+          class="form-control"
+          id="gate"
+          [(ngModel)]="currentTutorial.gate"
+          name="gate"
+        />
+      </div>
+      <div class="form-group">
+        <label for="typeVuelo">Tipo de vuelo </label>
+        <input
+          type="text"
+          class="form-control"
+          id="typeVuelo"
+          [(ngModel)]="currentTutorial.typeVuelo"
+          name="typeVuelo"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="flightNo">Numero de vuelo </label>
+        <input
+          type="number"
+          class="form-control"
+          id="flightNo"
+          [(ngModel)]="currentTutorial.flightNo"
+          name="flightNo"
+        />
+      </div>
+      <div class="form-group">
+        <label><strong>Status:</strong></label>
+        {{ currentTutorial.published ? "Published" : "Pending" }}
+      </div>
+    </form>
+
+    <button
+      class="badge badge-primary mr-2"
+      *ngIf="currentTutorial.published"
+      (click)="updatePublished(false)"
+    >
+      UnPublish
+    </button>
+    <button
+    
+      class="badge badge-primary mr-2"
+      (click)="updatePublished(true)"
+    >
+      Publish
+    </button>
+
+    <button class="badge badge-danger mr-2" (click)="deleteTutorial()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updateTutorial()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentTutorial.id">
+    <br />
+    <p>Cannot access this Tutorial...</p>
+  </div>
+</div>
